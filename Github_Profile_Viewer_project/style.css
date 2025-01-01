@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img{
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    width: 200px;
+    height: 200px;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+.seconddiv{
+    display: flex;
+    background-color: aquamarine;
+    width: 50%;
+    padding:20px ;
+    min-height: 55%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.seconddivhidder{
+    display: none;
+}
+.userf{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.follower{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    
+}
+.userd{
+    font-size: 18px;
+    text-align: center;
+}
+.username{
+    font-size: 1.5em;
+}
+.Repo{
+    font-size: 1.5em;
+    text-align: center;
+}
+.visit{
+    background-color: rgb(60,60,60);
+    width: 100%;
+    height: 10%;
+    display: flex;
+    font-size: 1.5em;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    border-radius:20px;
+    text-decoration: none;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+  }
+  .loader::before , .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+  }
+  .loader::after{
+    inset: 8px;
+    transform: rotate3d(90, 90, 0, 180deg );
+    border-color: #FF3D00;
+  }
+
+  @keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+  }
+
+  /* #search purpose:- */
+
+  /* General reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light background color */
+    color: #333; /* Neutral text color */
+}
+
+/* Container styling */
+.firstdiv {
+    margin-bottom: 1%;
+    text-align: center;
+    
+    margin-top: 5%; /* Center the content vertically */
+}
+
+/* Title styling */
+.firstdiv h1 {
+    font-size: 2.5rem;
+    color: #4a90e2; /* Blue tone */
+    margin-bottom: 10px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Input styling */
+#inf {
+    width: 300px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Spacing between input and button */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#inf:focus {
+    border-color: #4a90e2; /* Highlight on focus */
+}
+
+/* Button styling */
+#btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #357ab8; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #inf {
+        width: 80%; /* Full-width for smaller screens */
+        margin-bottom: 10px; /* Spacing for stacked layout */
+    }
+
+    #btn {
+        width: 80%; /* Full-width for smaller screens */
+    }
+}
+
+
+/* all type device:- */
+
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+    .seconddiv {
+        width: 40%;
+        padding: 30px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    .img {
+        width: 150px;
+        height: 150px;
+    }
+    .seconddiv {
+        width: 70%;
+        padding: 20px;
+    }
+    .visit {
+        font-size: 1em;
+    }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .seconddiv {
+        width: 90%;
+        flex-direction: column;
+        padding: 15px;
+    }
+    .img {
+        width: 100px;
+        height: 100px;
+    }
+    .userd, .username, .Repo {
+        font-size: 1em;
+    }
+    .visit {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .img {
+        width: 80px;
+        height: 80px;
+    }
+    .visit {
+        font-size: 0.8em;
+    }
+    .follower {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
